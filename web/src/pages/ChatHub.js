@@ -1,6 +1,8 @@
+// src/pages/ChatHub.js
 import { useState } from "react";
-import api from "../api";
 import ChatBox from "../components/ChatBox";
+import api from "../api";
+import Navbar from "../components/Navbar";
 
 export default function ChatHub() {
   const [messages, setMessages] = useState([]);
@@ -15,10 +17,11 @@ export default function ChatHub() {
 
   return (
     <div>
+      <Navbar />
       <h2>Chat dengan Revan</h2>
-      <ChatBox messages={messages}/>
-      <input value={input} onChange={e=>setInput(e.target.value)} />
+      <ChatBox messages={messages} />
+      <input value={input} onChange={(e) => setInput(e.target.value)} />
       <button onClick={sendMessage}>Kirim</button>
     </div>
   );
-                                            }
+    }
